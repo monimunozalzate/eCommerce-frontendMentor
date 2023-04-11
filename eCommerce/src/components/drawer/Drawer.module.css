@@ -1,0 +1,23 @@
+.drawerList {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.drawerList li {
+    font-family: var(--font-family);
+    font-weight: var(--fontBold) !important;
+    color: var(--veryDarkBlue);
+}
+
+.drawerList .closeIcon {
+    padding: 0;
+}
+
+.drawerList .closeIcon svg {
+    padding-bottom: 2rem;
+    font-weight: bold;
+    color: var(--darkGrayishBlue);
+}
