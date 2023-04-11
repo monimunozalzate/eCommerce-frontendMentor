@@ -29,12 +29,18 @@
     align-items: center;
     gap: 2rem;
     list-style-type: none;
+    /* height: 6rem; */
 }
 
 #header .leftNav .collections .item {
     font-size: var(--fontP);
     font-weight: var(--fontLightWeight);
     font-family: var(--font-family);
+    height: 100%;
+}
+
+#header .leftNav .collections .item:hover {
+    border-bottom: 2px solid var(--orange);
 }
 
 #header .icons {
@@ -42,6 +48,12 @@
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+    box-shadow: none;
+}
+
+#header .icons svg {
+    font-size: 1.8rem;
+    box-shadow: none;
 }
 
 
@@ -61,6 +73,15 @@
         display: none;
     }
     #header .icons {
-        gap: 0;
+        gap: 1rem;
+    }
+}
+
+@media (max-width:400px) {
+    #header .hamburguer {
+        gap: 0.5rem;
+    }
+    #header .icons {
+        gap: 0.5rem;
     }
 }

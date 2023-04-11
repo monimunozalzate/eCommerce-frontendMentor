@@ -30,7 +30,7 @@ export default function TemporaryDrawer({ collections }) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List className={styles.drawerList}>
-        <IconButton className={styles.closeIcon}>
+        <IconButton className={styles.closeIcon}  >
           <CloseIcon size='large'/>
         </IconButton>
         {collections.map((text, index) => (
@@ -51,12 +51,11 @@ export default function TemporaryDrawer({ collections }) {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2, margin: "0", padding: "0 1rem 0 " }}
+            sx={{ mr: 2, margin: "0" }}
             onClick={toggleDrawer(anchor, true)}
           >
             <MenuIcon />
           </IconButton>
-          {/* <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button> */}
           <Drawer
             anchor={anchor}
             open={state[anchor]}
