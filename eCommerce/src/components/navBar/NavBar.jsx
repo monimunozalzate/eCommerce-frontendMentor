@@ -45,7 +45,7 @@ const NavBar = () => {
             <ShoppingCartOutlinedIcon />
           </IconButton>
           <IconButton size="large" style={{ padding: "0" }}>
-            <Avatar alt="Remy Sharp" src="assets/images/image-avatar.png" />
+            <Avatar alt="Remy Sharp" src="src\assets\images\image-avatar.png" />
           </IconButton>
         </div>
         {isOpenCart ? <Cart/>:null}
