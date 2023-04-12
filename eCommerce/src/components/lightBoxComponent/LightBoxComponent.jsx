@@ -4,19 +4,13 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
-const LightBoxComponent = ({ open, setOpen }) => {
+const LightBoxComponent = ({ open, setOpen, imagesArray }) => {
   return (
     <div>
       <Lightbox
         open={open}
         close={() => setOpen(false)}
-        slides={[
-          { src: 'src/assets/images/image-product-1.jpg'},
-          {src:'src/assets/images/image-product-2.jpg'},
-          {src:'src/assets/images/image-product-3.jpg'},
-          {src:'src/assets/images/image-product-4.jpg'},
-
-       ]}
+        slides={imagesArray}
         plugins={[Thumbnails]}
         // className={styles.lightbox}
         thumbnails={{

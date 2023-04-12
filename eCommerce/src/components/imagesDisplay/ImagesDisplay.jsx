@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import LightBoxComponent from "../lightBoxComponent/LightBoxComponent";
-import styles from "./imagesDisplay.module.css";
 import Lightbox from "yet-another-react-lightbox";
 import Inline from "yet-another-react-lightbox/plugins/inline";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
@@ -10,41 +9,59 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 const ImagesDisplay = () => {
   const [open, setOpen] = useState(false);
   return (
-    <>
-      <div className={styles.imagesGrid}>
-        {/* <img src="src\assets\images\image-product-1-thumbnail.jpg" alt="" /> */}
-        <Lightbox
-          open={true}
-          slides={imagesArray}
-          plugins={[Inline, Thumbnails]}
-          inline={{
-            style: {
-              width: "100%",
-              maxWidth: "900px",
-              aspectRatio: "3 / 2",
-            },
-          }}
-          // className={styles.lightbox}
-          thumbnails={{
-            position: "bottom",
-            width: 120,
-            height: 80,
-            border: 1,
-            borderRadius: 4,
-            padding: 4,
-            gap: 16,
-          }}
-        />
-      </div>
-      <button
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        width: "50%",
+        padding: " 5rem 0",
+      }}
+    >
+      <Lightbox
+        open={true}
+        slides={imagesArray}
+        plugins={[Inline, Thumbnails]}
+        styles={{ container: { backgroundColor: "var(--white)" },
+      thumbnail:{backgroundColor: ' white', borderRadius:'5px'},
+      thumbnailsContainer:{backgroundColor: ' white'},
+      root:{"--yarl__slide_image":'8px'}
+      
+     }}
+        inline={{
+          style: {
+            width: "100%",
+            maxWidth: "100%",
+            aspectRatio: "3 / 3",
+          },
+        }}
+        thumbnails={{
+          position: "bottom",
+          width: 130,
+          height: 80,
+          border: 0,
+          borderRadius: 8,
+          padding: 2,
+          gap: 0,
+          imageFit:'contain',
+          vignette: false
+        }}
+      />
+
+      {/* <button
         // className={styles.btn}
         type="button"
         onClick={() => setOpen(true)}
       >
         Ver más
-      </button>
-      {open ? <LightBoxComponent open={open} setOpen={setOpen} /> : null}
-    </>
+      </button> */}
+      {open ? (
+        <LightBoxComponent
+          open={open}
+          setOpen={setOpen}
+          imagesArray={imagesArray}
+        />
+      ) : null}
+    </div>
   );
 };
 
