@@ -3,6 +3,7 @@
     flex-direction: row;
     width: 100%;
     gap: 3rem;
+    padding: 3rem 0;
 }
 
 .mainContainer .left {

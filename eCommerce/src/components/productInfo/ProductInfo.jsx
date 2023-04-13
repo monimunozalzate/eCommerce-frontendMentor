@@ -34,7 +34,7 @@ const ProductInfo = () => {
         Featuring a durable rubber outer sole, they'll withstand everything the
         weather can offer.
       </p>
-      <section>
+      <section className={styles.numbers}>
         <div className={styles.priceContainer}>
           <h3 className={styles.price}>${price}.00</h3>
           <p className={styles.discount}>{discount}%</p>
