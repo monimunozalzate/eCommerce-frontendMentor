@@ -5,33 +5,38 @@ import Inline from "yet-another-react-lightbox/plugins/inline";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import "./ImagesDisplay.css";
+import ZoomInIcon from "@mui/icons-material/ZoomIn";
+import { IconButton } from "@mui/material";
 
 const ImagesDisplay = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "50%",
-        padding: " 5rem 0",
-      }}
-    >
+    <div className="imagesContainer">
+      <IconButton
+        className="btn"
+        type="button"
+        onClick={() => setOpen(true)}
+      >
+        <ZoomInIcon style={{ fontSize: "1.8rem" }} />
+      </IconButton>
       <Lightbox
         open={true}
         slides={imagesArray}
         plugins={[Inline, Thumbnails]}
-        styles={{ container: { backgroundColor: "var(--white)" },
-      thumbnail:{backgroundColor: ' white', borderRadius:'5px'},
-      thumbnailsContainer:{backgroundColor: ' white'},
-      root:{"--yarl__slide_image":'8px'}
-      
-     }}
+        carousel={{ preload: 1 }}
+        render={{ buttonPrev: () => null, buttonNext: () => null }}
+        styles={{
+          container: { backgroundColor: "var(--white)" },
+          thumbnail: { backgroundColor: " white", borderRadius: "5px" },
+          thumbnailsContainer: { backgroundColor: " white" },
+          // root:{"--yarl__slide_image":'8px'}
+        }}
         inline={{
           style: {
             width: "100%",
             maxWidth: "100%",
-            aspectRatio: "3 / 3",
+            aspectRatio: "4 /4",
           },
         }}
         thumbnails={{
@@ -39,21 +44,13 @@ const ImagesDisplay = () => {
           width: 130,
           height: 80,
           border: 0,
-          borderRadius: 8,
-          padding: 2,
+          padding: 0,
           gap: 0,
-          imageFit:'contain',
-          vignette: false
+          imageFit: "contain",
+          vignette: false,
         }}
       />
 
-      {/* <button
-        // className={styles.btn}
-        type="button"
-        onClick={() => setOpen(true)}
-      >
-        Ver más
-      </button> */}
       {open ? (
         <LightBoxComponent
           open={open}
