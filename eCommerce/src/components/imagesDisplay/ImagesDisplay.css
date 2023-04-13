@@ -11,17 +11,36 @@
     flex-direction: column;
     align-items: flex-end;
     width: 100%;
-    /* padding: 2rem 0; */
 }
 
-.btn {
+#btn {
     background-color: var(--white);
     width: 3rem;
     height: 3rem;
     text-align: end;
     padding: 0;
-    position: absolute;
-    top: 10%;
-    right: 12%;
     z-index: 100;
+    top: 23%;
+    left: 38.5%;
+}
+
+@media (max-width:600px) {
+    .yarl__thumbnails_container {
+        display: none;
+    }
+    .yarl__slide_image {
+        border-radius: 0rem;
+    }
+    #btn {
+        top: 12% !important;
+        left: 86% !important;
+        /* margin: 1rem; */
+    }
+}
+
+@media (max-width:290px) {
+    #btn {
+        top: 13% !important;
+        left: 82% !important;
+    }
 }

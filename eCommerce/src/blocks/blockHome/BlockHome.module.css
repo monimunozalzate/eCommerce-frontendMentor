@@ -1,6 +1,6 @@
 .home {
     padding: 0 4rem;
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 
 @media (max-width:800px) {

@@ -3,13 +3,17 @@ import ImagesDisplay from "../../components/imagesDisplay/ImagesDisplay";
 import ProductInfo from "../../components/productInfo/ProductInfo";
 import styles from './BlockMain.module.css'
 
-const BlockMain = () => {
+
+const BlockMain = ({setaddingToCart, imagesArray}) => {
+  
   return (
-    <div className={styles.mainContainer}>
-      <ImagesDisplay className={styles.left}/>
-      <ProductInfo className={styles.right}/>
+    <div className={styles.mainContainer} >
+      <ImagesDisplay className={styles.left} imagesArray={imagesArray}/>
+      <ProductInfo className={styles.right} imagesArray={imagesArray} setaddingToCart={setaddingToCart}/>
     </div>
   );
 };
 
 export default BlockMain;
+
+

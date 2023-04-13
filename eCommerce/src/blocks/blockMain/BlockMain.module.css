@@ -3,7 +3,7 @@
     flex-direction: row;
     width: 100%;
     gap: 3rem;
-    padding: 3rem 0;
+    padding: 5rem 0;
 }
 
 .mainContainer .left {
@@ -12,4 +12,19 @@
 
 .mainContainer .right {
     width: 50%;
+}
+
+
+/* @media (max-width:800px) {
+    .mainContainer {
+        gap: 1rem;
+    }
+} */
+
+@media (max-width:800px) {
+    .mainContainer {
+        flex-direction: column;
+        padding: 0;
+        gap: 0;
+    }
 }

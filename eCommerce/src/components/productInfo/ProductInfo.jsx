@@ -4,11 +4,12 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import styles from "./ProductInfo.module.css";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import {product} from '../../db/product'
 
-const ProductInfo = () => {
+const ProductInfo = ({ imagesArray, setaddingToCart }) => {
   const [isAdding, setisAdding] = useState(0);
-  const [addingToCart, setaddingToCart] = useState(false);
 
+  // -------------------------------
   const haddleAdd = () => {
     setisAdding(isAdding + 1);
   };
@@ -18,28 +19,22 @@ const ProductInfo = () => {
       setisAdding(isAdding);
     }
   };
-  const price = 125;
-  const discount = 50;
-  const pastPrice = price * 2;
 
   return (
     <div className={styles.productInfo}>
-      <h1 className={styles.company}>SNEAKER COMPANY</h1>
+      <h1 className={styles.company}>{product.company}</h1>
       <h2 className={styles.edition}>
-        Fall Limited Edition
-        <br /> Sneakers{" "}
+        {product.title}
       </h2>
       <p className={styles.description}>
-        These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they'll withstand everything the
-        weather can offer.
+       {product.description}
       </p>
       <section className={styles.numbers}>
         <div className={styles.priceContainer}>
-          <h3 className={styles.price}>${price}.00</h3>
-          <p className={styles.discount}>{discount}%</p>
+          <h3 className={styles.price}>${product.price/2}.00</h3>
+          <p className={styles.discount}>{product.discount}%</p>
         </div>
-        <p className={styles.pastPrice}>${pastPrice}.00</p>
+        <p className={styles.pastPrice}>${product.price}.00</p>
       </section>
       <section className={styles.buttonSection}>
         <div className={styles.quantity}>
@@ -51,7 +46,18 @@ const ProductInfo = () => {
             <AddIcon />
           </IconButton>
         </div>
-        <button className={styles.addCart}>
+        <button
+          type="submit"
+          className={styles.addCart}
+          onClick={()=>setaddingToCart((prevState)=>[
+            ...prevState, {
+            image: imagesArray[1],
+            title: product.title,
+            price: product.price/2,
+            quantity: isAdding,
+            totalPrice: product.price*isAdding,
+          }])}
+        >
           <ShoppingCartOutlinedIcon />
           Add to cart
         </button>

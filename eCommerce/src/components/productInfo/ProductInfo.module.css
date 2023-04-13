@@ -1,31 +1,32 @@
 .productInfo {
     display: flex;
     flex-direction: column;
-    margin: 5rem 3rem 3rem 0;
+    margin: 3rem;
     gap: 1rem;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .productInfo .company {
     color: var(--orange);
     font-size: var(--fontP);
     font-family: var(--font-family);
-    font-weight: 400;
+    font-weight: 700;
     margin: 0;
 }
 
 .productInfo .edition {
     color: var(--veryDarkBlue);
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: var(--font-family);
     margin: 0;
 }
 
 .productInfo .description {
     font-weight: 400;
-    font-size: var(--fontP);
+    font-size: 1rem;
     font-family: var(--font-family);
-    color: var( --darkGrayishBlue);
+    color: var(--darkGrayishBlue);
+    width: 100%;
 }
 
 .numbers {
@@ -62,7 +63,7 @@
 .pastPrice {
     margin: 0;
     font-size: 1.3rem;
-    color: var( --grayishBlue);
+    color: var(--grayishBlue);
     text-decoration: line-through;
 }
 
@@ -70,7 +71,7 @@
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    margin: 1.5rem 3rem 0 0;
+    margin-top: 2rem;
 }
 
 .buttonSection .quantity {
@@ -101,4 +102,65 @@
     gap: 1rem;
     border: none;
     border-radius: 6px;
+}
+
+@media (max-width: 1025px) {
+    .productInfo {
+        margin: 0rem 3rem;
+        gap: 0.5rem;
+    }
+    .edition {
+        font-size: 2.3rem !important;
+    }
+    .description {
+        margin: 0.5rem 0;
+    }
+    .buttonSection {
+        margin-top: 1rem;
+    }
+}
+
+
+/* @media (max-width: 800px) {
+    .productInfo {
+        margin: 0 1rem;
+    }
+    .buttonSection .btn svg {
+        padding: 0rem;
+    }
+    .buttonSection .quantity {
+        gap: 0.5rem;
+    }
+} */
+
+@media (max-width: 800px) {
+    .productInfo {
+        margin: 2rem;
+    }
+    .edition {
+        font-size: 2.3rem !important;
+    }
+    .numbers {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .buttonSection {
+        flex-direction: column;
+        width: 100%;
+    }
+    .buttonSection .quantity,
+    .buttonSection .addCart {
+        width: 100%;
+    }
+    .buttonSection .addCart {
+        padding: 1rem;
+    }
+}
+
+@media (max-width:290px) {
+    .numbers {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

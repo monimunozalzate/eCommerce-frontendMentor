@@ -10,7 +10,7 @@ import Cart from "../cart/Cart";
 
 const collections = ["Collections", "Men", "Women", "About", "Contact"];
 
-const NavBar = () => {
+const NavBar = ({addingToCart}) => {
   const [isOpenCart, setIsOpenCart] = useState(false);
 
   const handleToggleCart = () => {
@@ -42,13 +42,13 @@ const NavBar = () => {
           color="inherit"
           onClick={handleToggleCart}
           >
-            <ShoppingCartOutlinedIcon />
+            <ShoppingCartOutlinedIcon style={{fontSize:'1.8rem'}}/>
           </IconButton>
-          <IconButton size="large" style={{ padding: "0" }}>
-            <Avatar alt="Remy Sharp" src="src\assets\images\image-avatar.png" />
+          <IconButton size="large" style={{ padding: "0", width:'3rem', height:'3rem' }}>
+            <Avatar alt="Remy Sharp" src="src\assets\images\image-avatar.png" style={{fontSize:'2rem', width:'3rem', height:'3rem'}}/>
           </IconButton>
         </div>
-        {isOpenCart ? <Cart/>:null}
+        {isOpenCart ? <Cart addingToCart={addingToCart}/>:null}
       </Toolbar>
     </AppBar>
   );
