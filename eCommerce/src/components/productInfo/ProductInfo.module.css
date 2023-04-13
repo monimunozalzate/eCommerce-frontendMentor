@@ -1,0 +1,98 @@
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0;
+}
+
+.productInfo .company {
+    color: var(--orange);
+    font-size: var(--fontP);
+    font-family: var(--font-family);
+    font-weight: 400;
+    margin: 0;
+}
+
+.productInfo .edition,
+.shoes {
+    color: var(--veryDarkBlue);
+    font-size: 3rem;
+    font-family: var(--font-family);
+    margin: 0;
+}
+
+.productInfo .description {
+    font-weight: 400;
+    font-size: var(--fontP);
+    font-family: var(--font-family);
+    color: var( --darkGrayishBlue);
+}
+
+.priceContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.priceContainer .price {
+    color: var(--veryDarkBlue);
+    font-size: 2rem;
+    font-family: var(--font-family);
+    margin: 0;
+}
+
+.priceContainer .discount {
+    color: var(--orange);
+    background-color: var(--paleOrange);
+    font-size: var(--fontP);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+}
+
+.pastPrice {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var( --grayishBlue);
+    text-decoration: line-through;
+}
+
+.buttonSection {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.buttonSection .quantity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--lightGrayishBlue);
+    gap: 1rem;
+    border-radius: 6px;
+}
+
+.buttonSection .btn {
+    width: 33%;
+}
+
+.buttonSection .btn svg {
+    padding: 0.5rem;
+    color: var(--orange);
+    font-weight: var(--fontBold);
+}
+
+.buttonSection .addCart {
+    background-color: var(--orange);
+    color: var(--white);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 66%;
+    gap: 1rem;
+    border: none;
+    border-radius: 6px;
+}
