@@ -25,18 +25,22 @@ const ProductInfo = () => {
   return (
     <div className={styles.productInfo}>
       <h1 className={styles.company}>SNEAKER COMPANY</h1>
-      <h2 className={styles.edition}>Fall Limited Edition</h2>
-      <h3 className={styles.shoes}>Sneakers</h3>
+      <h2 className={styles.edition}>
+        Fall Limited Edition
+        <br /> Sneakers{" "}
+      </h2>
       <p className={styles.description}>
         These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they'll withstand everything the
         weather can offer.
       </p>
-      <div className={styles.priceContainer}>
-        <h4 className={styles.price}>${price}.00</h4>
-        <p className={styles.discount}>{discount}%</p>
-      </div>
-      <p className={styles.pastPrice}>${pastPrice}.00</p>
+      <section>
+        <div className={styles.priceContainer}>
+          <h3 className={styles.price}>${price}.00</h3>
+          <p className={styles.discount}>{discount}%</p>
+        </div>
+        <p className={styles.pastPrice}>${pastPrice}.00</p>
+      </section>
       <section className={styles.buttonSection}>
         <div className={styles.quantity}>
           <IconButton onClick={handleSubstract} className={styles.btn}>

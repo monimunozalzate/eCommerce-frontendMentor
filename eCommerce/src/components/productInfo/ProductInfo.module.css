@@ -1,7 +1,9 @@
 .productInfo {
     display: flex;
     flex-direction: column;
-    padding: 4rem 0;
+    padding: 9rem 0 0;
+    gap: 1rem;
+    width: 100%;
 }
 
 .productInfo .company {
@@ -12,10 +14,9 @@
     margin: 0;
 }
 
-.productInfo .edition,
-.shoes {
+.productInfo .edition {
     color: var(--veryDarkBlue);
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-family: var(--font-family);
     margin: 0;
 }
@@ -63,18 +64,17 @@
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .buttonSection .quantity {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     background-color: var(--lightGrayishBlue);
     gap: 1rem;
     border-radius: 6px;
-}
-
-.buttonSection .btn {
     width: 33%;
 }
 
