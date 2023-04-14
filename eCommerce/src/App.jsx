@@ -1,13 +1,15 @@
-import React from 'react'
-import Home from './pages/Home'
+import React from "react";
+import Home from "./pages/Home";
+import QuantityProvider from "./context/Quantity.context";
 
 function App() {
-
   return (
     <>
-     <Home/>
+      <QuantityProvider>
+        <Home />
+      </QuantityProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

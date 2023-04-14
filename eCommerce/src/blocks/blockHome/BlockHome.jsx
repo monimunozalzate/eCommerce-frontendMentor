@@ -10,7 +10,7 @@ const BlockHome = () => {
   return (
     <div className={styles.home}>
       <BlockHeader addingToCart={addingToCart} imagesArray={imagesArray}/>
-      <BlockMain setaddingToCart={setaddingToCart} imagesArray={imagesArray}/>
+      <BlockMain setaddingToCart={setaddingToCart} addingToCart={addingToCart} imagesArray={imagesArray}/>
     </div >
   );
 };

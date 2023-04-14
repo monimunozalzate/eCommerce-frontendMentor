@@ -1,13 +1,14 @@
 import { IconButton } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import styles from "./ProductInfo.module.css";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import {product} from '../../db/product'
+import { QuantityContext } from '../../context/Quantity.context';
 
-const ProductInfo = ({ imagesArray, setaddingToCart }) => {
-  const [isAdding, setisAdding] = useState(0);
+const ProductInfo = ({ imagesArray, setaddingToCart, addingToCart }) => {
+  const {isAdding, setisAdding }= useContext(QuantityContext);
 
   // -------------------------------
   const haddleAdd = () => {
@@ -49,8 +50,8 @@ const ProductInfo = ({ imagesArray, setaddingToCart }) => {
         <button
           type="submit"
           className={styles.addCart}
-          onClick={()=>setaddingToCart((prevState)=>[
-            ...prevState, {
+          onClick={()=>setaddingToCart([
+            ...addingToCart, {
             image: imagesArray[1],
             title: product.title,
             price: product.price/2,
