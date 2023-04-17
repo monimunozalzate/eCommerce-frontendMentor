@@ -15,9 +15,10 @@
 }
 
 
-/* @media (max-width:800px) {
+/* @media (max-width:2560px) {
     .mainContainer {
-        gap: 1rem;
+        padding: 0;
+        gap: 0;
     }
 } */
 

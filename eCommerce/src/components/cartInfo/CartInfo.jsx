@@ -2,10 +2,12 @@ import React from "react";
 import styles from "../cart/Cart.module.css";
 import IconButton from "@mui/material/IconButton";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import { product } from "../../db/product";
 
-const CartInfo = ({ addingToCart, deleteProduct }) => {
+const CartInfo = ({ addingToCart, deleteProduct}) => {
+  
   return (
-    <>
+    < >
       {addingToCart.map((data) => {
         return (
           <section key={data.quantity} className={styles.productContainer}>
@@ -17,8 +19,8 @@ const CartInfo = ({ addingToCart, deleteProduct }) => {
                   {data.price} x {data.quantity} <span>${data.totalPrice}</span>{" "}
                 </p>
               </div>
-              <IconButton style={{ padding: "0" }} 
-              // onClick={deleteProduct}
+              <IconButton type="button" style={{ padding: "0" }} 
+              onClick={()=>deleteProduct(product)}
               >
                 <DeleteOutlineIcon />
               </IconButton>

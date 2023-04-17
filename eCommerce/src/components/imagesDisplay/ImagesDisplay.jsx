@@ -23,21 +23,21 @@ const ImagesDisplay = ({imagesArray}) => {
         <ZoomInIcon style={{ fontSize: "1.8rem" }} />
       </IconButton>
       <Lightbox
+      id='home'
         open={true}
         slides={imagesArray}
         plugins={[Inline, Thumbnails]}
         carousel={{ preload: 1 }}
         render={{ buttonPrev: () => null, buttonNext: () => null }}
         styles={{
-          container: { backgroundColor: "var(--white)" },
+          container: { backgroundColor: "var(--white)",  },
           thumbnail: { backgroundColor: " white", borderRadius: "5px" },
           thumbnailsContainer: { backgroundColor: " white", marginTop:'1rem' },
-          // root:{"--yarl__slide_image":'8px'}
         }}
         inline={{
           style: {
-            width: "103%",
-            maxWidth: "103%",
+            width: "100%",
+            maxWidth: "100%",
             aspectRatio: "4 /4",
           },
         }}

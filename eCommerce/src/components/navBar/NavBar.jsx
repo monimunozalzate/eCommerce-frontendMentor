@@ -10,7 +10,7 @@ import Cart from "../cart/Cart";
 
 const collections = ["Collections", "Men", "Women", "About", "Contact"];
 
-const NavBar = ({addingToCart}) => {
+const NavBar = ({addingToCart, setaddingToCart}) => {
   const [isOpenCart, setIsOpenCart] = useState(false);
 
   const handleToggleCart = () => {
@@ -48,7 +48,7 @@ const NavBar = ({addingToCart}) => {
             <Avatar alt="Remy Sharp" src="src\assets\images\image-avatar.png" style={{fontSize:'2rem', width:'3rem', height:'3rem'}}/>
           </IconButton>
         </div>
-        {isOpenCart ? <Cart addingToCart={addingToCart}/>:null}
+        {isOpenCart ? <Cart addingToCart={addingToCart} setaddingToCart={setaddingToCart} handleToggleCart={handleToggleCart}/>:null}
       </Toolbar>
     </AppBar>
   );

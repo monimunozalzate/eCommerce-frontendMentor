@@ -9,6 +9,18 @@ import { QuantityContext } from '../../context/Quantity.context';
 
 const ProductInfo = ({ imagesArray, setaddingToCart, addingToCart }) => {
   const {isAdding, setisAdding }= useContext(QuantityContext);
+//--------------------------------
+const handleAddingToCart =()=>{
+  setaddingToCart([
+    ...addingToCart, {
+    image: imagesArray[1],
+    title: product.title,
+    price: product.price/2,
+    quantity: isAdding,
+    totalPrice: product.price*isAdding,
+  }])
+  // console.log(addingToCart)
+}
 
   // -------------------------------
   const haddleAdd = () => {
@@ -50,14 +62,7 @@ const ProductInfo = ({ imagesArray, setaddingToCart, addingToCart }) => {
         <button
           type="submit"
           className={styles.addCart}
-          onClick={()=>setaddingToCart([
-            ...addingToCart, {
-            image: imagesArray[1],
-            title: product.title,
-            price: product.price/2,
-            quantity: isAdding,
-            totalPrice: product.price*isAdding,
-          }])}
+          onClick={handleAddingToCart}
         >
           <ShoppingCartOutlinedIcon />
           Add to cart

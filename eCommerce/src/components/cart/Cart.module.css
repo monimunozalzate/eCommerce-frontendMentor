@@ -21,6 +21,13 @@
     height: 20%;
 }
 
+.cartContainer .empty {
+    font-family: var(--font-family);
+    font-weight: var(--fontBold);
+    padding: 2rem 2rem 1rem;
+    text-align: center;
+}
+
 .cartContainer .productContainer {
     width: 100%;
     display: flex;

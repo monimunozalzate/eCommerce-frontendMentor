@@ -1,10 +1,10 @@
 import React from 'react'
 import NavBar from '../../components/navBar/NavBar'
 
-const BlockHeader = ({addingToCart}) => {
+const BlockHeader = ({addingToCart, setaddingToCart}) => {
   return (
     < >
-    <NavBar addingToCart={addingToCart}/>
+    <NavBar addingToCart={addingToCart} setaddingToCart={setaddingToCart}/>
     </>
   )
 }

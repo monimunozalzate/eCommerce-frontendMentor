@@ -1,9 +1,9 @@
 .productInfo {
     display: flex;
     flex-direction: column;
-    margin: 3rem;
+    justify-content: space-evenly;
+    margin: 0 3rem;
     gap: 1rem;
-    /* width: 100%; */
 }
 
 .productInfo .company {
@@ -104,6 +104,14 @@
     border-radius: 6px;
 }
 
+@media (max-width:2560px) {
+    .productInfo {
+        padding: 0;
+        gap: 4rem;
+        justify-content: space-evenly;
+    }
+}
+
 @media (max-width: 1025px) {
     .productInfo {
         margin: 0rem 3rem;
@@ -119,19 +127,6 @@
         margin-top: 1rem;
     }
 }
-
-
-/* @media (max-width: 800px) {
-    .productInfo {
-        margin: 0 1rem;
-    }
-    .buttonSection .btn svg {
-        padding: 0rem;
-    }
-    .buttonSection .quantity {
-        gap: 0.5rem;
-    }
-} */
 
 @media (max-width: 800px) {
     .productInfo {
